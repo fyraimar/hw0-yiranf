@@ -1,8 +1,12 @@
 import java.io.StringReader;
 import edu.stanford.nlp.ling.Word;
+import edu.stanford.nlp.objectbank.TokenizerFactory;
 import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
 import edu.stanford.nlp.process.Tokenizer;
 /**
+ * hw0 of Yiran FEI (yiranf)
+ * 
+ * Reference:
  * An example for Homework 0 of 11791 F13
  *
  * @author Zi Yang <ziy@cs.cmu.edu>
@@ -13,12 +17,11 @@ public class DependencyExample {
    * the tokens to the console.
    *
    * @param args
-   * Set the first argument as the sentence to
-   *  be tokenized.
+   * Set the first argument as the sentence to be tokenized.
 * * */
 
   public static void main(String[] args) {
-    edu.stanford.nlp.process.TokenizerFactory<Word> factory =
+    TokenizerFactory<Word> factory =
         PTBTokenizerFactory.newTokenizerFactory();
     Tokenizer<Word> tokenizer =
         factory.getTokenizer(new StringReader(args[0]));
